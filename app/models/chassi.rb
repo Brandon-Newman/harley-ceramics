@@ -1,0 +1,2 @@
+class Chassi < ApplicationRecord
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  chassi_id: 1
+  available_colors: MyString
+
+two:
+  name: MyString
+  chassi_id: 1
+  available_colors: MyString

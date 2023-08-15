@@ -2,19 +2,19 @@ Rails.application.routes.draw do
 
   get "/catalog", to: "chassis#list_catalog"
 
-  get "/motorcycle-chassis", to: "chassis#list_chassis"
+  get "/motorcycle-chassis", to: "chassis#list_chassis" #done
 
   get "/models-by-chassis", to: "model#list_models"
 
-  get "/colors-by-model", to: "model#list_model_colors"
+  get "/colors-by-model", to: "model#list_model_colors" 
 
-  get "/paint-colors", to: "color#list_all_colors"
+  get "/paint-colors", to: "color#list_all_colors" #done
 
-  post "/new-chassis", to: "chassis#new_chassis"
+  post "/new-chassis", to: "chassis#new_chassis" #done
 
   post "/new-model", to: "model#new_model"
 
-  post "/new-color", to: "color#new_color"
+  post "/new-color", to: "color#new_color" #done
 
   patch "/add-color-to-model", to: "model#add_color_to_model"
 
