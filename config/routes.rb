@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/models-by-chassis", to: "model#list_models"
 
-  get "/colors-by-model", to: "model#list_model_colors" 
+  get "/list-model-colors", to: "model#list_model_colors"
 
   get "/paint-colors", to: "color#list_all_colors" #done
 

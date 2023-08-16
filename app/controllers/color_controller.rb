@@ -7,6 +7,10 @@ class ColorController < ApplicationController
 
     def new_color
         color = Color.create(description: params[:description])
-        render json: color, status: :ok
+        render json: color, status: :created
+    end
+
+    def delete_color
+       # go through and remove from colors? of does join table take care of that?
     end
 end
