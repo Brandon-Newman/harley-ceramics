@@ -33,7 +33,6 @@ class ModelController < ApplicationController
         return render json: "Combination already exists", status: :bad_request unless new_combination
         ModelColor.create(model_id: model.id, color_id: color.id)
         render json: "#{model.name} now available in #{color.description}", status: :ok
-        #creates duplicates
     end
 
     def delete_model
