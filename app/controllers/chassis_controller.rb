@@ -10,9 +10,9 @@ class ChassisController < ApplicationController
         render json: chassis, status: :created
     end
     
-        def list_catalog
-                #think of structure first
-        end
+    def list_catalog
+            #think of structure first
+    end
 
     def delete_chassis
         # need structure to do a full delete. Think about relationships

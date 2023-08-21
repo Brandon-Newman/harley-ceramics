@@ -1,6 +1,14 @@
 class ModelController < ApplicationController
     def list_models
-        #need join table before creating models
+        chassis = Chassi.find(params[:id])
+        models = Model.where(chassi_id: chassis.id).pluck('id', 'name')
+        model_info = models.map { |id, name| {id: id, name: name}}
+        
+        chassis_models = {
+            chassis: chassis.style,
+            models: model_info
+    }
+        render json: chassis_models, status: :ok
     end
 
     def list_model_colors

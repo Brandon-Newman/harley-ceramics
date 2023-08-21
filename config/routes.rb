@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/motorcycle-chassis", to: "chassis#list_chassis" #done
 
-  get "/models-by-chassis", to: "model#list_models"
+  get "/models-by-chassis/:id", to: "model#list_models" #done
 
   get "/list-model-colors", to: "model#list_model_colors"
 
@@ -18,10 +18,10 @@ Rails.application.routes.draw do
 
   patch "/add-color-to-model", to: "model#add_color_to_model"
 
-  delete "/chassis", to: "chassis#delete_chassis"
+  delete "/delete-chassis", to: "chassis#delete_chassis"
 
-  delete "/model", to: "model#delete_model"
+  delete "/delete-model", to: "model#delete_model"
 
-  delete "/color", to: "color#delete_color"
+  delete "/delete-color", to: "color#delete_color"
   
 end
