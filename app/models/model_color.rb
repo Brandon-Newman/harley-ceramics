@@ -1,0 +1,2 @@
+class ModelColor < ApplicationRecord
+end

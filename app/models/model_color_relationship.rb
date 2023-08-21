@@ -1,2 +1,0 @@
-class ModelColorRelationship < ApplicationRecord
-end
