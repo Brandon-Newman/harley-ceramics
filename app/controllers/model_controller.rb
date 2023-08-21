@@ -17,7 +17,7 @@ class ModelController < ApplicationController
         # color_desc = color_ids.map { |id| Color.find(id).description}
         color_desc = ModelColor.where(model_id: model.id).pluck('color_id').map { |id| Color.find(id).description}
 
-        render json: {model: model.name, colors: color_desc}, status: :ok
+        render json: {id: model.id, model: model.name, colors: color_desc}, status: :ok
     end
 
     def new_model

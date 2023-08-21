@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/catalog", to: "chassis#list_catalog"
+  get "/catalog", to: "chassis#list_catalog" #done
 
   get "/motorcycle-chassis", to: "chassis#list_chassis" #done
 
@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   delete "/delete-model/:id", to: "model#delete_model"
 
   delete "/delete-color/:id", to: "color#delete_color"
+
+  # Special Project
+  post "/create-custom-bike", to: "controller#action"
+  #create a customer "new bike model" by choosing a current chassis, model, and color. Color can be existing or a new custom color
   
 end

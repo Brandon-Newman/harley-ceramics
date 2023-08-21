@@ -11,11 +11,28 @@ class ChassisController < ApplicationController
     end
     
     def list_catalog
-            #think of structure first
+        chassis = Chassi.all
+        catalog = {
+            Catalog: chassis.map { |chassi| {
+                chassis_id: chassi.id,
+                chassis_description: chassi.style,
+                models: Model.where(chassi_id: chassi.id).map { |model| {
+                    model_id: model.id,
+                    model_name: model.name,
+                    model_colors: ModelColor.where(model_id: model.id).pluck('color_id').map { |id| {
+                        color_id: Color.find(id).id,
+                        color_description: Color.find(id).description
+                    }
+                }
+                }}
+            }
+            }
+        }
+
+        render json: catalog, status: :ok
     end
 
     def delete_chassis
         # need structure to do a full delete. Think about relationships
     end
-
 end
