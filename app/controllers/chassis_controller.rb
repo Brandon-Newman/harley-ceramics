@@ -12,8 +12,7 @@ class ChassisController < ApplicationController
     
     def list_catalog
         chassis = Chassi.all
-        catalog = {
-            Catalog: chassis.map { |chassi| {
+        catalog = chassis.map { |chassi| {
                 chassis_id: chassi.id,
                 chassis_description: chassi.style,
                 models: Model.where(chassi_id: chassi.id).map { |model| {
@@ -27,7 +26,7 @@ class ChassisController < ApplicationController
                 }}
             }
             }
-        }
+        
 
         render json: catalog, status: :ok
     end

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   post "/new-color", to: "color#new_color" #done
 
-  patch "/add-color-to-model/:id", to: "model#add_color_to_model"
+  patch "/add-color-to-model/:id", to: "model#add_color_to_model" #done
 
   delete "/delete-chassis/:id", to: "chassis#delete_chassis"
 
