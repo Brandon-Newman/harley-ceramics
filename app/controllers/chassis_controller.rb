@@ -30,8 +30,4 @@ class ChassisController < ApplicationController
 
         render json: catalog, status: :ok
     end
-
-    def delete_chassis
-        # need structure to do a full delete. Think about relationships
-    end
 end

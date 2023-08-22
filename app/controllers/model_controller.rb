@@ -3,7 +3,7 @@ class ModelController < ApplicationController
     
     def list_models
         chassis = Chassi.find(params[:id])
-        models = Model.where(chassi_id: chassis.id).pluck('id', 'name')
+        models = Model.where(chassi_id: chassis.id).active.pluck('id', 'name')
         model_info = models.map { |id, name| {id: id, name: name}}
         
         chassis_models = {
@@ -38,7 +38,6 @@ class ModelController < ApplicationController
             available_colors: available_colors
         }
         render json: new_bike, status: :ok
-        #need join table before creating models 
     end
 
     def add_color_to_model
@@ -50,8 +49,11 @@ class ModelController < ApplicationController
         render json: "#{model.name} now available in #{color.description}", status: :ok
     end
 
-    def delete_model
-        # haven't designed these yet
+    def discontinue_model
+        model = Model.find(params[:id])
+        model.status = "discontinued"
+        model.save
+        render json: "#{model.name} successfully discontinued", status: :ok
     end
 
 end

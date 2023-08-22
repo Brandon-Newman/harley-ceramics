@@ -18,11 +18,7 @@ Rails.application.routes.draw do
 
   patch "/add-color-to-model/:id", to: "model#add_color_to_model" 
 
-  delete "/delete-chassis/:id", to: "chassis#delete_chassis" #to_be_done
-
-  delete "/delete-model/:id", to: "model#delete_model" #to_be_done
-
-  delete "/delete-color/:id", to: "color#delete_color" #to_be_done
+  patch "/discontinue-model/:id", to: "model#discontinue_model" 
 
   # Special Project
   post "/create-custom-bike", to: "controller#action" #to_be_done

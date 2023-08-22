@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_153014) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_135522) do
   create_table "chassis", force: :cascade do |t|
     t.string "style"
     t.datetime "created_at", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_153014) do
     t.integer "chassi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "active", null: false
   end
 
 end
