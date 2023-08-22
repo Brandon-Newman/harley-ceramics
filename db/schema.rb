@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_22_135522) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_151203) do
   create_table "chassis", force: :cascade do |t|
     t.string "style"
     t.datetime "created_at", null: false
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_135522) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "official_color", default: true, null: false
+  end
+
+  create_table "custom_bikes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "chassi_id"
+    t.integer "model_id"
+    t.string "color"
   end
 
   create_table "model_color_relationships", force: :cascade do |t|

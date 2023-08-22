@@ -1,0 +1,2 @@
+class CustomBike < ApplicationRecord
+end
