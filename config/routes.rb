@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 
   patch "/discontinue-model/:id", to: "model#discontinue_model" 
 
-  # Special Project
   post "/create-custom-bike", to: "custom_bike#build_custom_bike" #to_be_done
-  #create a customer "new bike model" by choosing a current chassis, model, and color. Color can be existing or a new custom color
   
 end
