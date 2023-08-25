@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   patch "/discontinue-model/:id", to: "model#discontinue_model" 
 
-  post "/create-custom-bike", to: "custom_bike#build_custom_bike" #to_be_done
+  post "/create-custom-bike", to: "custom_bike#build_custom_bike"
   
 end
